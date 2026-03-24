@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven_3.8.6'   // Name from Jenkins Global Tool Config
-        jdk 'JDK17'           // Or whichever JDK you configured
+        jdk 'JDK25'           // must match Jenkins tool config
+        maven 'Maven_3.9.14'   // must match Jenkins tool config
     }
     stages {
         stage('Checkout') {
@@ -22,4 +22,3 @@ pipeline {
         }
     }
 }
-pipeline { agent any; stages { stage('Build') { steps {echo 'Hello Jenkins' } } } }
