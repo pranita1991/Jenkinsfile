@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        jdk 'JDK25'           // must match Jenkins tool config
-        maven 'Maven_3.9.14'   // must match Jenkins tool config
+        jdk 'JDK25'             // must match Jenkins tool config
+        maven 'Maven_3.9.14'    // must match Jenkins tool config
     }
     stages {
         stage('Checkout') {
@@ -12,12 +12,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
     }
